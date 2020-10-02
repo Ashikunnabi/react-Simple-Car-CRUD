@@ -1,0 +1,17 @@
+.search_suggestions__ul {
+    width:100% !important; 
+    position: absolute !important;
+    left: 8px !important; 
+    display: inline-block !important; 
+    top: 40px !important;
+    background: white !important;
+    list-style: none;
+    -webkit-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 37px -10px rgba(0,0,0,0.75);
+}
+
+.search_suggestions__ul li {
+    border-bottom: 1px solid #c5ccd2;
+    cursor: pointer;
+}
