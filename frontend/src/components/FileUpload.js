@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import {DropzoneDialog} from 'material-ui-dropzone'
+import { DropzoneDialog } from 'material-ui-dropzone'
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 export default class FileUpload extends Component {
-  api = "http://127.0.0.1:8000"
+    api = "http://127.0.0.1:8000"
     constructor(props) {
         super(props);
         this.state = {
@@ -29,19 +29,19 @@ export default class FileUpload extends Component {
         this.formData.set('file', files[0])
 
         fetch(`${this.api}/uploadfile/`, {
-          method: 'POST',
-          body: this.formData,
+            method: 'POST',
+            body: this.formData,
         })
-        .then(response=>response.json())
-        .then(result => {
-          document.getElementById('success').removeAttribute('hidden');
-          document.getElementById('error').setAttribute('hidden', 'hidden');
-        })
-        .catch(error => {
-          document.getElementById('success').setAttribute('hidden', 'hidden');
-          document.getElementById('error').removeAttribute('hidden');
-          console.log(error)
-        })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('success').removeAttribute('hidden');
+                document.getElementById('error').setAttribute('hidden', 'hidden');
+            })
+            .catch(error => {
+                document.getElementById('success').setAttribute('hidden', 'hidden');
+                document.getElementById('error').removeAttribute('hidden');
+                console.log(error)
+            })
     }
 
     handleOpen() {
@@ -52,9 +52,9 @@ export default class FileUpload extends Component {
 
     render() {
         return (
-            <div style={{float: "right"}}>
+            <div style={{ float: "right" }}>
                 <Button onClick={this.handleOpen.bind(this)} startIcon={<CloudUploadIcon />}>
-                  Upload Excel
+                    Upload Excel
                 </Button>
                 <DropzoneDialog
                     open={this.state.open}

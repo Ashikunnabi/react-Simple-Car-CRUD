@@ -32,7 +32,7 @@ database = DB().connect()
 # connect to database
 db = database.test
 # connect to collection
-collection = db.test
+collection = db.car
 
 def bson_to_json(data):
     return json.loads(dumps(data))

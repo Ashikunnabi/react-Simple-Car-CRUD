@@ -32,27 +32,27 @@ class PiChart extends React.Component {
   }
 
   renderPieChartData = (text) => {
-    const url = (text == '') ? `${this.api}/details/` : `${this.api}/details/?q=${text}`;
+    const url = (text === '') ? `${this.api}/details/` : `${this.api}/details/?q=${text}`;
     console.log(url)
     fetch(url, {
       method: 'GET',
     })
-    .then(response => response.json())
-    .then(result => {
-      this.setState({
-        dataPie: {
-          labels: Object.keys(result),
-          datasets: [
-            {
-              data: Object.keys(result).map((n) => result[n]),
-            }
-          ]
-      }
+      .then(response => response.json())
+      .then(result => {
+        this.setState({
+          dataPie: {
+            labels: Object.keys(result),
+            datasets: [
+              {
+                data: Object.keys(result).map((n) => result[n]),
+              }
+            ]
+          }
+        })
       })
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
 
   componentDidMount() {
@@ -60,7 +60,7 @@ class PiChart extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.renderPieChartData(nextProps.queryParameter); 
+    this.renderPieChartData(nextProps.queryParameter);
   }
 
 

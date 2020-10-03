@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -18,11 +18,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header setSearchQueryParameter={setSearchQueryParameter}/>
-      <PiChart queryParameter={queryParameter}/>
+      <Header setSearchQueryParameter={setSearchQueryParameter} />
+      <PiChart queryParameter={queryParameter} />
       <br />
       <br />
-      <Table queryParameter={queryParameter}/>
+      <Table queryParameter={queryParameter} />
       <Footer />
     </div>
   );

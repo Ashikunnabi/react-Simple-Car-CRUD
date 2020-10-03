@@ -64,7 +64,6 @@ class Search extends Component {
       <form>
         <input
           className="form-control mr-sm-2 text-white searchbar" type="text" placeholder="Search" aria-label="Search"
-          placeholder="Search for..."
           ref={input => this.search = input}
           onChange={this.handleInputChange}
           onKeyPress={this.handleSubmit}

@@ -9,8 +9,8 @@ const Footer = () => {
           <MDBCol md="6">
             <h5 className="title">Cars List</h5>
             <p>
-              In this application you will get cars information. You can easily search cars by Manufacturer Name, 
-              add car information, delete & update cars information. One extra feature of this application is you can easily 
+              In this application you will get cars information. You can easily search cars by Manufacturer Name,
+              add car information, delete & update cars information. One extra feature of this application is you can easily
               add bulk car information by uploading excel with (manufacturer_name, model, year, producing_country_name) required columns.
             </p>
           </MDBCol>

@@ -1,0 +1,4 @@
+.dataTables_wrapper tr td:nth-child(1), 
+.dataTables_wrapper th:nth-child(1) {
+    display: none;
+}
