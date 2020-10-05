@@ -30,7 +30,7 @@ class Header extends Component {
               </MDBNavItem>
               <MDBNavItem>
                 {/* <MDBFormInline waves> */}
-                {<ModalPage />}
+                {<ModalPage setSearchQueryParameter={this.props.setSearchQueryParameter} />}
                 {/* </MDBFormInline> */}
               </MDBNavItem>
             </MDBNavbarNav>

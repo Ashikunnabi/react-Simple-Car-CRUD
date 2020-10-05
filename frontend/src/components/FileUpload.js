@@ -13,6 +13,10 @@ export default class FileUpload extends Component {
         };
     }
 
+    setSearchValue = (text) => {
+      this.props.setSearchQueryParameter(text);
+    };
+
     handleClose() {
         this.setState({
             open: false
@@ -36,6 +40,7 @@ export default class FileUpload extends Component {
             .then(result => {
                 document.getElementById('success').removeAttribute('hidden');
                 document.getElementById('error').setAttribute('hidden', 'hidden');
+                this.setSearchValue('all');
             })
             .catch(error => {
                 document.getElementById('success').setAttribute('hidden', 'hidden');

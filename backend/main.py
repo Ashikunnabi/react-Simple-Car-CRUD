@@ -40,7 +40,7 @@ def bson_to_json(data):
 
 @app.get("/cars/")
 def cars(q: Optional[str] = None):
-    if q is not None:
+    if q is not None and q != 'all':
         cars = bson_to_json(collection.find({"manufacturer_name": q}))
     else:
         cars = bson_to_json(collection.find({}))
@@ -98,7 +98,7 @@ def car_bulk_add(data: list):
 
 @app.get("/details/")
 def get_details(q: Optional[str] = None):
-    if q is not None:
+    if q is not None and q != 'all':
         data = bson_to_json(collection.find({"manufacturer_name": q}, {"_id": 0, "manufacturer_name": 1}))
     else:
         data = bson_to_json(collection.find({}, {"_id": 0, "manufacturer_name": 1}))

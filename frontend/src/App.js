@@ -13,7 +13,11 @@ function App() {
   const [queryParameter, setQueryParameter] = useState('')
 
   const setSearchQueryParameter = (text) => {
-    setQueryParameter(text)
+    if (queryParameter == '' && text === 'all') setQueryParameter('all');
+    else if (queryParameter == '' && text === '') setQueryParameter('all');
+    else if (queryParameter == 'all' && text === 'all') setQueryParameter('');
+    else if (queryParameter == 'all' && text === '') setQueryParameter('');
+    else setQueryParameter(text);
   }
 
   return (

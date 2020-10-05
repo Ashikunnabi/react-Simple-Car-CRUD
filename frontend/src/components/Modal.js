@@ -21,10 +21,10 @@ class Modal extends Component {
         <MDBNavLink to='#' color="info" onClick={this.toggle(9)}>Add</MDBNavLink>
         <MDBModal isOpen={this.state.modal9} toggle={this.toggle(9)} fullHeight position="top">
           <MDBModalHeader toggle={this.toggle(9)}>Add New Car or,
-          {<FileUpload />}
+          {<FileUpload setSearchQueryParameter={this.props.setSearchQueryParameter} />}
           </MDBModalHeader>
           <MDBModalBody>
-            {<Form />}
+            {<Form setSearchQueryParameter={this.props.setSearchQueryParameter} />}
           </MDBModalBody>
           <MDBModalFooter style={{ justifyContent: "center" }}>
             {/* <MDBBtn color="secondary" onClick={this.toggle(9)}>Close</MDBBtn>

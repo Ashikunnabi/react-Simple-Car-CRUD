@@ -2,8 +2,13 @@ import React from "react";
 import './Form.css'
 import { MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 
-const Form = () => {
+const Form = (props) => {
   const api = "http://127.0.0.1:8000"
+
+  const setSearchValue = (text) => {
+    console.log('dfsdfsdfdsf')
+    props.setSearchQueryParameter(text);
+  };
 
 
   const handleSubmit = (event) => {
@@ -21,6 +26,7 @@ const Form = () => {
       .then(result => {
         document.getElementById('success').removeAttribute('hidden');
         document.getElementById('error').setAttribute('hidden', 'hidden');
+        setSearchValue('all');
       })
       .catch(error => {
         document.getElementById('success').setAttribute('hidden', 'hidden');
