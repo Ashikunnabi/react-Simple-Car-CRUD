@@ -8,7 +8,6 @@ class ModalUpdate extends Component {
   }
 
   toggle = nr => () => {
-    console.log('llllll')
     let modalNumber = 'modal' + nr
     this.setState({
       [modalNumber]: !this.state[modalNumber]
@@ -17,13 +16,10 @@ class ModalUpdate extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // this.toggle(nextProps.modalNumber);
-
     let modalNumber = 'modal' + nextProps.modalNumber;
     this.setState({
       [modalNumber]: !this.state[modalNumber]
     });
-    console.log(nextProps);
   }
 
   render() {
@@ -34,7 +30,7 @@ class ModalUpdate extends Component {
           <MDBModalHeader toggle={this.toggle(9)}>Update Car Information
         </MDBModalHeader>
           <MDBModalBody>
-            {<FormUpdate data={this.props.rowDetails} />}
+            {<FormUpdate data={this.props.rowDetails} closeModal={this.toggle(9)} setSearchQueryParameter={this.props.setSearchQueryParameter}/>}
           </MDBModalBody>
           <MDBModalFooter style={{ justifyContent: "center" }}>
             {/* <MDBBtn color="secondary" onClick={this.toggle(9)}>Close</MDBBtn>

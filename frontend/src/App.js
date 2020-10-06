@@ -13,10 +13,10 @@ function App() {
   const [queryParameter, setQueryParameter] = useState('')
 
   const setSearchQueryParameter = (text) => {
-    if (queryParameter == '' && text === 'all') setQueryParameter('all');
-    else if (queryParameter == '' && text === '') setQueryParameter('all');
-    else if (queryParameter == 'all' && text === 'all') setQueryParameter('');
-    else if (queryParameter == 'all' && text === '') setQueryParameter('');
+    if (queryParameter === '' && text === 'all') setQueryParameter('all');
+    else if (queryParameter === '' && text === '') setQueryParameter('all');
+    else if (queryParameter === 'all' && text === 'all') setQueryParameter('');
+    else if (queryParameter === 'all' && text === '') setQueryParameter('');
     else setQueryParameter(text);
   }
 
@@ -26,7 +26,7 @@ function App() {
       <PiChart queryParameter={queryParameter} />
       <br />
       <br />
-      <Table queryParameter={queryParameter} />
+      <Table queryParameter={queryParameter} setSearchQueryParameter={setSearchQueryParameter} />
       <Footer />
     </div>
   );

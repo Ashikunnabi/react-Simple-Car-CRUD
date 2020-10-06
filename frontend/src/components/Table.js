@@ -110,7 +110,7 @@ const Table = (props) => {
         responsive
         data={data}
       />
-      <ModalUpdate modalNumber={modal} resetModal={resetModal} rowDetails={selectedRow} />
+      <ModalUpdate modalNumber={modal} resetModal={resetModal} rowDetails={selectedRow} setSearchQueryParameter={props.setSearchQueryParameter}/>
     </div>
   );
 }

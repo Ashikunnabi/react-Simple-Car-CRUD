@@ -6,6 +6,11 @@ const Form = (props) => {
   const api = "http://127.0.0.1:8000"
   const [data, setData] = useState(props.data);
 
+  const setSearchValue = (text) => {
+    props.setSearchQueryParameter(text);
+  };
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,6 +27,8 @@ const Form = (props) => {
       .then(result => {
         document.getElementById('success').removeAttribute('hidden');
         document.getElementById('error').setAttribute('hidden', 'hidden');
+        props.closeModal();
+        setSearchValue('all');
       })
       .catch(error => {
         document.getElementById('success').setAttribute('hidden', 'hidden');
@@ -38,6 +45,8 @@ const Form = (props) => {
       .then(result => {
         document.getElementById('success-delete').removeAttribute('hidden');
         document.getElementById('error').setAttribute('hidden', 'hidden');
+        props.closeModal();
+        setSearchValue('all');
       })
       .catch(error => {
         document.getElementById('success-delete').setAttribute('hidden', 'hidden');
